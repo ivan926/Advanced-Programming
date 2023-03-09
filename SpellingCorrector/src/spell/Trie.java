@@ -170,30 +170,6 @@ public class Trie implements ITrie{
 
     }
 
-    public void getWordCountHelper(Node currentNode)
-    {
-       for(int i=0 ; i < currentNode.getChildren().length; i++ )
-       {
-            int letter = 'a' + i;
-           // System.out.println(letter);
-            char let = (char)letter;
-           //System.out.println(let);
-           if (currentNode.getChildren()[i] != null)
-           {
-
-               Node tempNode = currentNode.getChildren()[i];
-
-               traversalOfTrie(tempNode);
-           }
-
-       }
-
-
-
-
-    }
-
-
 
     @Override
     public int getWordCount() {
@@ -270,12 +246,6 @@ public class Trie implements ITrie{
                 return false;
 
             }
-
-
-
-
-
-
 
 
         }
@@ -394,28 +364,6 @@ public class Trie implements ITrie{
         toStringHelper(Root, curWord, output);
 
         return output.toString();
-
-    }
-
-    private void getNodeCounterHelper(Node currentNode){
-
-
-        for(int i=0 ; i < currentNode.getChildren().length; i++ )
-        {
-            int letter = 'a' + i;
-
-            char let = (char)letter;
-
-            if (currentNode.getChildren()[i] != null)
-            {
-                Node tempNode = currentNode.getChildren()[i];
-                //right after node changes to child and is not null, increment nodeCount
-                nodeCount++;
-                traversalForNodeCount(tempNode);
-            }
-
-        }
-
 
     }
 

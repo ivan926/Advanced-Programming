@@ -204,8 +204,6 @@ public class EvilHangmanGame implements IEvilHangmanGame {
        // System.out.println("Made it out");
 
 
-
-        //we find out which subset is the largest and make that the current word set
         dictionaryOfWordsOfFixedLength = newWordSet;
 
         if(guessedWordSoFar.equals(initialKey))
@@ -303,7 +301,6 @@ public class EvilHangmanGame implements IEvilHangmanGame {
 
         Iterator<Map.Entry<String, Set<String>>> itr = KeyStringToWord.entrySet().iterator();
         int setWithGreatestSize = 0;
-
 
 
         //find max number
