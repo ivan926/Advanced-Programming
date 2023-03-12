@@ -10,14 +10,11 @@ import com.sun.net.httpserver.HttpHandler;
 import passoffresult.LoginResult;
 import passoffresult.RegisterResult;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 
-public class RegisterHandler implements HttpHandler {
+public class RegisterHandler extends Handler {
     public RegisterHandler(){}
 
     @Override
@@ -28,25 +25,15 @@ public class RegisterHandler implements HttpHandler {
         boolean success = false;
 
         try {
-            // Determine the HTTP request type (GET, POST, etc.).
-            // Only allow POST requests for this operation.
-            // This operation requires a POST request, because the
-            // client is "posting" information to the server for processing.
+
+
             if (exchange.getRequestMethod().toLowerCase().equals("post")) {
 
-                // Get the HTTP request headers
                 Headers reqHeaders = exchange.getRequestHeaders();
-                // Check to see if an "Authorization" header is present
 
 
-
-
-                        // Extract the JSON string from the HTTP request body
-
-                        // Get the request body input stream
                         InputStream reqBody = exchange.getRequestBody();
 
-                        // Read JSON string from the input stream
                         String reqData = readString(reqBody);
 
                         // Display/log the request JSON data
@@ -60,20 +47,16 @@ public class RegisterHandler implements HttpHandler {
 						RegisterService service = new RegisterService();
 						RegisterResponse result = service.register(request);
 
+						String JSON_ResponseBody = gson.toJson(result);
+
 						exchange.sendResponseHeaders(HttpURLConnection.HTTP_OK, 0);
 						OutputStream resBody = exchange.getResponseBody();
-						gson.toJson(result, (Type) resBody);
+						System.out.println(JSON_ResponseBody);
+						writeString(JSON_ResponseBody,resBody);
+
+
 						resBody.close();
 
-
-                        // Start sending the HTTP response to the client, starting with
-                        // the status code and any defined headers.
-                        exchange.sendResponseHeaders(HttpURLConnection.HTTP_OK, 0);
-
-
-                        // We are not sending a response body, so close the response body
-                        // output stream, indicating that the response is complete.
-                        exchange.getResponseBody().close();
 
                         success = true;
             }
@@ -108,16 +91,22 @@ public class RegisterHandler implements HttpHandler {
     /*
        The readString method shows how to read a String from an InputStream.
    */
-    private String readString(InputStream is) throws IOException {
-        StringBuilder sb = new StringBuilder();
-        InputStreamReader sr = new InputStreamReader(is);
-        char[] buf = new char[1024];
-        int len;
-        while ((len = sr.read(buf)) > 0) {
-            sb.append(buf, 0, len);
-        }
-        return sb.toString();
-    }
+//    private String readString(InputStream is) throws IOException {
+//        StringBuilder sb = new StringBuilder();
+//        InputStreamReader sr = new InputStreamReader(is);
+//        char[] buf = new char[1024];
+//        int len;
+//        while ((len = sr.read(buf)) > 0) {
+//            sb.append(buf, 0, len);
+//        }
+//        return sb.toString();
+//    }
+//
+//    private void writeString(String str, OutputStream os) throws IOException {
+//        OutputStreamWriter sw = new OutputStreamWriter(os);
+//        sw.write(str);
+//        sw.flush();
+//    }
 
 
 }

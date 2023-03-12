@@ -54,6 +54,45 @@ public class UserDAO {
         System.out.println("User has been created");
     }
 
+    public Boolean isDuplicate(String username)
+    {
+        Boolean userNameExist = false;
+
+        String sql = "SELECT username FROM User WHERE username = ?";
+        String SQLUsername = null;
+
+        try(PreparedStatement stmnt = conn.prepareStatement(sql))
+        {
+            stmnt.setString(1,username);
+
+           ResultSet rs = stmnt.executeQuery();
+
+            while(rs.next())
+            {
+                SQLUsername = rs.getString("username");
+
+            }
+
+
+            if(username.equals(SQLUsername))
+            {
+                userNameExist = true;
+            }
+
+
+
+        }
+        catch(SQLException exception)
+        {
+            System.out.println("Something has gone wrong when verifying duplicate");
+
+        }
+
+
+
+        return userNameExist;
+    }
+
     /**
      * This will validate the user when they are trying to log in,
      * this function is used to verify if the username and password combination does exist

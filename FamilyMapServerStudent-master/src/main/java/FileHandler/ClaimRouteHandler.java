@@ -1,5 +1,6 @@
 package FileHandler;
 
+import com.google.gson.Gson;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -83,6 +84,7 @@ public class ClaimRouteHandler implements HttpHandler {
 
                         // Display/log the request JSON data
                         System.out.println(reqData);
+
 
                         // TODO: Claim a route based on the request data
 

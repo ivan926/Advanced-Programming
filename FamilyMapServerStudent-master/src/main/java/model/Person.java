@@ -60,6 +60,10 @@ public class Person {
         this.spouseID = spouseID;
     }
 
+    public Person() {
+
+    }
+
     public String getPersonID() {
         return personID;
     }

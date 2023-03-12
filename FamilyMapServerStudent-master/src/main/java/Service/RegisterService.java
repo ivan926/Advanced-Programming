@@ -1,14 +1,13 @@
 package Service;
 
 import DAO.*;
+import JSON.*;
 import Request_Response.RegisterRequest;
 import Request_Response.RegisterResponse;
 import model.User;
 import model.authtoken;
 
 import java.sql.Connection;
-import java.util.Locale;
-import java.util.UUID;
 
 /**
  * THis will carry out the /user/register webAPI
@@ -24,8 +23,8 @@ public class RegisterService {
         System.out.println("\ninside the register method");
         regReq.stringify();
         System.out.println("New person ID is being created for the user");
-        UUID newPersonID = UUID.randomUUID();
-        User newUser = new User(regReq.getUsername(), regReq.getPassword(), regReq.getEmail(), regReq.getFirstName(), regReq.getLastName(), regReq.getGender(),newPersonID.toString());
+        UniqueID ID_Database = UniqueID.getUniqueDatabaseInstance();
+        User newUser = new User(regReq.getUsername(), regReq.getPassword(), regReq.getEmail(), regReq.getFirstName(), regReq.getLastName(), regReq.getGender(),ID_Database.getUniqueID());
 //        System.out.println(newPersonID.toString());
 //        newPersonID = UUID.randomUUID();
 //        System.out.println(newPersonID.toString());
@@ -59,11 +58,22 @@ public class RegisterService {
                 return registerResponse;
             }
 
+
+
+
+
             database = Database.getInstance();
             System.out.println("Got an instance of the Database");
             conn = database.getConnection();
             System.out.println("Passing database connection to UserDAO");
             userdao = new UserDAO(conn);
+
+            if(userdao.isDuplicate(newUser.getUsername()))
+            {
+                RegisterResponse registerResponse = new RegisterResponse("Error: Username already taken");
+                System.out.println("Returning HTTP response java OBJECT");
+                return registerResponse;
+            }
             System.out.println("registering new user...");
             userdao.createUser(newUser);
 
@@ -71,20 +81,22 @@ public class RegisterService {
 
             userdao.validate(newUser.getUsername(), newUser.getPassword());
 
-            newPersonID = UUID.randomUUID();
-            authtokenModelObject = new authtoken(newPersonID.toString(), newUser.getUsername());
+
+            authtokenModelObject = new authtoken(ID_Database.getUniqueID(), newUser.getUsername());
             System.out.println("passing database connection to AUTHTOKEN_DAO");
             authtokendao = new AuthtokenDAO(conn);
             System.out.println("passing authtoken model object to create token");
             authTokenForUser = authTokenForUser = authtokendao.createToken(authtokenModelObject);
             System.out.println("AuthToken created and returned " + authTokenForUser);
-            database.closeConnection(true);
+            database.closeConnection(false);
 
 
         } catch (DataAccessError dataAccessError) {
             dataAccessError.printStackTrace();
+
             System.out.println("Something went wrong when trying to open data base Connection");
-            RegisterResponse registerResponse = new RegisterResponse("Error: Username already taken");
+            RegisterResponse registerResponse = new RegisterResponse("Error: Something went wrong with the connection");
+            System.out.println("Returning HTTP response java OBJECT");
             return registerResponse;
 
 
@@ -100,6 +112,13 @@ public class RegisterService {
 
     void generateFourGenerations(User user,Connection conn)
     {
+        json fillInDatabase;
+        fillInDatabase = json.getInstance();
+        fnames fatherNames = fillInDatabase.getFatherNames();
+        mnames motherNames = fillInDatabase.getMotherNames();
+        snames spouseNames = fillInDatabase.getSurNames();
+        LocationData locations = fillInDatabase.getLocationArray();
+
         PersonDAO person = new PersonDAO(conn);
 
         System.out.println("Filled 4 generations");

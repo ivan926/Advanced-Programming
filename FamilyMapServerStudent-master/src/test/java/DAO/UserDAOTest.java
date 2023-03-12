@@ -140,6 +140,21 @@ public class UserDAOTest {
 
     }
 
+    @Test
+    public void isDuplicateSuccess()
+    {
+        assertTrue(uDao.isDuplicate("navis462"));
+
+
+    }
+    @Test
+    public void isDuplicateFailure()
+    {
+        assertFalse(uDao.isDuplicate("NAVI465"));
+
+
+    }
+
 
     @AfterEach
     public void tearDown() {
@@ -149,6 +164,8 @@ public class UserDAOTest {
         db.closeConnection(false);
 
     }
+
+
 
 
 }
