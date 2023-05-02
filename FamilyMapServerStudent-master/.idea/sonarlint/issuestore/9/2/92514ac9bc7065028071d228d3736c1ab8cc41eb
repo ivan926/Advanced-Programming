@@ -1,0 +1,14 @@
+
+P
+java:S1191"5Use classes from the Java API instead of Sun classes.(¬„úïùÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Óì¢¶
+~
+java:S1157>"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(Ûî€åüÿÿÿÿ
+S	java:S106V"9Replace this use of System.out or System.err by a logger.(‚ˆ„ùÿÿÿÿ
+V	java:S125\"<This block of commented-out lines of code should be removed.(¯šé…úÿÿÿÿ
+M
+java:S1135Y"2Complete the task associated to this TODO comment.(„Ö¡şÿÿÿÿÿ
+U
+java:S1874‚"9Remove this use of "HTTP_SERVER_ERROR"; it is deprecated.(ô®ß“ıÿÿÿÿ
+G
+java:S1128"1Remove this unused import 'com.google.gson.Gson'.(–§

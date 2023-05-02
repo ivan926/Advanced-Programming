@@ -1,0 +1,10 @@
+[Mon Mar 06 20:53:05 MST 2023] - INFO passoff.ServerTest: 	Setting up Login Valid User Test...
+[Mon Mar 06 20:53:05 MST 2023] - INFO client.Proxy: 	Clear called
+[Mon Mar 06 20:53:05 MST 2023] - INFO client.Client: 	Post without Request Body called
+[Mon Mar 06 20:53:05 MST 2023] - INFO client.Client: 	Attempting to open connection to server
+[Mon Mar 06 20:53:05 MST 2023] - INFO client.Client: 	Connection opened to server
+[Mon Mar 06 20:53:05 MST 2023] - INFO client.Client: 	Setting passoffrequest method to POST
+[Mon Mar 06 20:53:05 MST 2023] - INFO client.Client: 	Request method set to POST
+[Mon Mar 06 20:53:05 MST 2023] - INFO client.Client: 	Setting Do Output to true
+[Mon Mar 06 20:53:05 MST 2023] - INFO client.Client: 	Do Output set to true
+[Mon Mar 06 20:53:05 MST 2023] - INFO client.Client: 	Connecting to server

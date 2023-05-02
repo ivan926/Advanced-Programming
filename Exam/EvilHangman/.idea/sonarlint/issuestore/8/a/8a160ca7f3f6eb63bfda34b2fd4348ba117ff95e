@@ -1,0 +1,20 @@
+
+J
+java:S3740Y"/Provide the parametrized type for this generic.(Óºœóúÿÿÿÿ
+t
+java:S2293t"YReplace the type specification in this constructor call with the diamond operator ("<>").(½ˆÀùÿÿÿÿ
+p
+java:S2293‰"YReplace the type specification in this constructor call with the diamond operator ("<>").(öˆƒç
+E
+java:S5411'"*Use the primitive boolean expression here.(öíÌ‹ùÿÿÿÿ
+^
+java:S2259£"HA "NullPointerException" could be thrown; "winningKey" is nullable here.(¥¾ài
+`
+java:S2095"EUse try-with-resources or close this "Scanner" in a "finally" clause.(¼ì®òÿÿÿÿÿ
+m
+java:S3776N"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(¦ üÿÿÿÿ
+V	java:S106¥"9Replace this use of System.out or System.err by a logger.(®ƒã8¼Éá0
+V	java:S106Î"9Replace this use of System.out or System.err by a logger.(™…Ù8¢¼Éá0
+k	java:S100Û"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ä¤‘8¤¼Éá0
+p
+java:S3776ğ"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(šì¸Î8¨¼Éá0

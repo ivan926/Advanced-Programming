@@ -17,7 +17,7 @@ public class fnames {
 
     }
 
-    public String[] getFatherNameArray()
+    public String[] getFemaleNameArray()
     {
         return data;
     }

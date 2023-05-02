@@ -1,16 +1,19 @@
 package DAO;
 
 import model.Person;
+import model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * PersonDAO is the abstract interface that interacts explicitly with the person table
  */
-public class PersonDAO {
+public class PersonDAO extends DAO{
 
 
     private final Connection conn;
@@ -46,45 +49,30 @@ public class PersonDAO {
     }
 
     /**
-     * We are removing specified person and associated properties
-     * @param personID The row that the user wishes to remove using some sort of identifier
-     * @throws DataAccessError exception
+     * This method will help in clearing the person table for a user who has information
+     * people related to them, we will use associated username to find them
+     * @param associatedUsername
+     * @throws DataAccessError
      */
-    public void removePerson (String personID)throws DataAccessError{}
+    public int removePeople(String associatedUsername)throws DataAccessError{
+        String sql = "DELETE FROM Person WHERE associatedUsername = ? ";
 
-    /**
-     * We will update a table, by editing values within the rows maybe UID, firstname,lastname,gender etc
-     * @param person we will pass through the person object and use it to retrieve the personID
-     *  so we know the current actual data in memory
-     *  @throws DataAccessError exception
-     */
-    public void update(Person person)throws DataAccessError{}
+        int numberOfPeopleRemoved = 0;
+        try (PreparedStatement stmnt = conn.prepareStatement(sql)){
 
-    /**
-     * THis will populate the server database with generated data for the specified user object with
-     * properties that will help us create an appropriate person object
-     * By default 4 generations will be created
-     * This must be user already registered. If there is any data already associated with the user we delete it
-     * @param person object with updated properties
-     * @throws DataAccessError exception
-     */
-    public void fill(Person person)throws DataAccessError{
+            stmnt.setString(1,associatedUsername);
 
+            numberOfPeopleRemoved = stmnt.executeUpdate();
+
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+       // System.out.println(numberOfPeopleRemoved);
+        return numberOfPeopleRemoved;
     }
 
 
-    /**
-     *This will be a an optional parameter similar to the fill with a user object which will have
-     * properties such as first name last name, and gender. This will be used to create a model object
-     * or update it
-     * It lets the user decide the number of generations, it must be a non negative number (The default is 4)
-     * which resulsts in 31 new persons with each associated events
-     * @param person model object that will have important information needed
-     * @param generations
-     * @throws DataAccessError exception
-     * not within range error/not an int error
-     */
-    public void fill(Person person, int generations)throws DataAccessError{}
+
 
     /**
      * Gets a peron object using an ID
@@ -143,21 +131,132 @@ public class PersonDAO {
      * @return a list of family members are returned
      * @throws DataAccessError exception
      */
-    public Person[] getFamilyMembers(String username)throws DataAccessError { return null; }
+    public Person[] getFamilyMembers(String username)throws DataAccessError {
+        String sql = "SELECT * FROM Person WHERE associatedUsername = ? ";
+
+        Person[] personArray = null;
+        try(PreparedStatement stmnt = conn.prepareStatement(sql)){
+            stmnt.setString(1,username);
+
+            ResultSet rs =  stmnt.executeQuery();
+
+
+            int arrayIndex = 0;
+            int totalPeople = 0;
+            //get total rows
+            while(rs.next())
+            {
+                totalPeople++;
+            }
+
+            personArray = new Person[totalPeople];
+
+            //reset pointer to top of the data table row
+            rs =  stmnt.executeQuery();
+
+            while(rs.next())
+            {
+                personArray[arrayIndex] = (     new Person(rs.getString(1),rs.getString(2),rs.getString(3),
+                      rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),
+                      rs.getString(8)));
+
+
+
+                arrayIndex++;
+            }
+
+
+        }
+        catch(SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        //System.out.println(personArray[0].getPersonID());
+        return personArray;
+
+    }
 
     /**
      * This will receive a list of people, this is used in conjunction with the load function
      * @param listOfPeople array of person objects
      * @throws DataAccessError
      */
-    public void insertPeople(Person[] listOfPeople)throws DataAccessError{}
+    public void insertPeople(Person[] listOfPeople)throws DataAccessError{
+        int sizeofList = listOfPeople.length;
+        int arrayIndex = 0;
+        Person person;
+        System.out.println(sizeofList);
+        while(arrayIndex < sizeofList)
+        {
 
-    public void insertPerson(Person person)throws DataAccessError{
+          //  System.out.println(arrayIndex);
+            String PERSONID = null;
+            String ASSOCIATED_USERNAME = null;
+            String FIRST_NAME = null;
+            String LAST_NAME = null;
+            String GENDER = null;
+            String FATHER_ID = null;
+            String MOTHER_ID = null;
+            String SPOUSE_ID = null;
+
+            PERSONID = listOfPeople[arrayIndex].getPersonID();
+            ASSOCIATED_USERNAME = listOfPeople[arrayIndex].getAssociatedUsername();
+            FIRST_NAME = listOfPeople[arrayIndex].getFirstName();
+            LAST_NAME = listOfPeople[arrayIndex].getLastName();
+            GENDER = listOfPeople[arrayIndex].getGender();
+            if(listOfPeople[arrayIndex].getGender() != null)
+            {
+                GENDER = GENDER.toLowerCase();
+            }
+            FATHER_ID = listOfPeople[arrayIndex].getFatherID();
+            MOTHER_ID = listOfPeople[arrayIndex].getMotherID();
+            SPOUSE_ID = listOfPeople[arrayIndex].getSpouseID();
+
+            person = new Person(PERSONID,ASSOCIATED_USERNAME,FIRST_NAME,LAST_NAME,GENDER,FATHER_ID,MOTHER_ID,SPOUSE_ID);
+
+            String sql = "INSERT INTO Person (personID, AssociatedUsername, firstName, lastName, gender, " +
+                    "fatherID, motherID, spouseID) VALUES(?,?,?,?,?,?,?,?)";
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                //Using the statements built-in set(type) functions we can pick the question mark we want
+                //to fill in and give it a proper value. The first argument corresponds to the first
+                //question mark found in our sql String
+                stmt.setString(1, person.getPersonID());
+                stmt.setString(2, person.getAssociatedUsername());
+                stmt.setString(3, person.getFirstName());
+                stmt.setString(4, person.getLastName());
+                stmt.setString(5, person.getGender());
+                stmt.setString(6, person.getFatherID());
+                stmt.setString(7, person.getMotherID());
+                stmt.setString(8, person.getSpouseID());
+
+
+                stmt.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println(e.getMessage());
+                throw new DataAccessError(e.getErrorCode(),e.getMessage());
+            }
+
+            arrayIndex++;
+        }
+
+
+
+
+    }
+
+    public int insertPerson(Person person)throws DataAccessError{
 
         //We can structure our string to be similar to a sql command, but if we insert question
         //marks we can change them later with help from the statement
         String sql = "INSERT INTO Person (personID, AssociatedUsername, firstName, lastName, gender, " +
                 "fatherID, motherID, spouseID) VALUES(?,?,?,?,?,?,?,?)";
+        int peopleInserted = 0;
+        String gender = person.getGender();
+        if(person.getGender() != null)
+        {
+            gender = gender.toLowerCase();
+        }
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             //Using the statements built-in set(type) functions we can pick the question mark we want
             //to fill in and give it a proper value. The first argument corresponds to the first
@@ -166,19 +265,19 @@ public class PersonDAO {
             stmt.setString(2, person.getAssociatedUsername());
             stmt.setString(3, person.getFirstName());
             stmt.setString(4, person.getLastName());
-            stmt.setString(5, person.getGender());
+            stmt.setString(5, gender);
             stmt.setString(6, person.getFatherID());
             stmt.setString(7, person.getMotherID());
             stmt.setString(8, person.getSpouseID());
 
 
-            stmt.executeUpdate();
+            peopleInserted = stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
             throw new DataAccessError("Error encountered while inserting an event into the database");
         }
 
-
+        return peopleInserted;
     }
 
 

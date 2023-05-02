@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c5d372f7-d335-4f50-b7d3-438c9dacecda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/jars/apiguardian-api-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/jars/junit-jupiter-api-5.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/jars/junit-platform-commons-1.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/jars/opentest4j-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/notsobig.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/src/passoff/SpellTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/src/passoff/TrieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/src/spell/INode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/src/spell/ISpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/src/spell/ITrie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/src/spell/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/src/spell/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/src/spell/SpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/src/spell/Trie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/word.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS240 Exam practice/SpellingCorrector/words.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EvilHangman/EvilHangman.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/dictionary.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/empty.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/gameWords.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/jars/apiguardian-api-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/jars/opentest4j-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/small.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/src/hangman/EmptyDictionaryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/src/hangman/EvilHangman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/src/hangman/EvilHangmanGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/src/hangman/GuessAlreadyMadeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/src/hangman/IEvilHangmanGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/EvilHangman/src/passoff/HangmanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/jars/apiguardian-api-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/jars/junit-jupiter-api-5.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/jars/junit-platform-commons-1.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/jars/opentest4j-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/notsobig.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/src/passoff/SpellTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/src/passoff/TrieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/src/spell/INode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/src/spell/ISpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/src/spell/ITrie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/src/spell/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/src/spell/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/src/spell/SpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/src/spell/Trie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/word.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam/SpellingCorrector/words.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpellingCorrector/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/dictionary.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/empty.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/gameWords.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/jars/apiguardian-api-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/jars/opentest4j-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/small.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/src/hangman/EmptyDictionaryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/src/hangman/EvilHangman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/src/hangman/EvilHangmanGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/src/hangman/GuessAlreadyMadeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/src/hangman/IEvilHangmanGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/EvilHangman/src/passoff/HangmanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/jars/apiguardian-api-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/jars/junit-jupiter-api-5.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/jars/junit-platform-commons-1.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/jars/opentest4j-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/notsobig.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/src/passoff/SpellTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/src/passoff/TrieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/src/spell/INode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/src/spell/ISpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/src/spell/ITrie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/src/spell/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/src/spell/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/src/spell/SpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/src/spell/Trie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/word.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/SpellingCorrector/words.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EvilHangman/src/hangman/EvilHangmanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/EvilHangman/src/hangman/EvilHangmanGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpellingCorrector/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/SpellingCorrector/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpellingCorrector/out/production/SpellingCorrector/spell/SpellCorrector.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpellingCorrector/out/production/SpellingCorrector/spell/SpellCorrector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpellingCorrector/src/spell/Trie.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpellingCorrector/src/spell/Trie.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2LRQaLmPQAUfKLnlaYmPMRGkaQv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c5d372f7-d335-4f50-b7d3-438c9dacecda" name="Default Changelist" comment="" />
+      <created>1675831477768</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675831477768</updated>
+      <workItem from="1675831479784" duration="16000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

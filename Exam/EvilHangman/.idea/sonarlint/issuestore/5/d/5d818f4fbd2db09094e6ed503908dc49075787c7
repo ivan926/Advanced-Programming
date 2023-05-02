@@ -1,0 +1,17 @@
+
+E
+java:S5411+"*Use the primitive boolean expression here.(ÏóÍüÿÿÿÿ
+E
+java:S5411@"*Use the primitive boolean expression here.(èæàøûÿÿÿÿ
+E
+java:S5411M"*Use the primitive boolean expression here.(’†õĞùÿÿÿÿ
+R
+java:S4973:"<Strings and Boxed types should be compared using "equals()".(¾ÆÅÒ
+C	java:S108")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿ
+N	java:S106-"9Replace this use of System.out or System.err by a logger.(‡ÿ´¾
+N	java:S106."9Replace this use of System.out or System.err by a logger.(Ÿ·÷ö
+S	java:S106/"9Replace this use of System.out or System.err by a logger.(±Öğüÿÿÿÿ
+N	java:S1060"9Replace this use of System.out or System.err by a logger.(´Ñ¤í
+C	java:S108H")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿ
+S	java:S106O"9Replace this use of System.out or System.err by a logger.(È£©¤ÿÿÿÿÿ
+S	java:S106U"9Replace this use of System.out or System.err by a logger.(†Õ›øÿÿÿÿ

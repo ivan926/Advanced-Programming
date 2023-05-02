@@ -1,5 +1,6 @@
 package DAO;
 
+import com.sun.source.tree.AssertTree;
 import model.User;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import javax.xml.crypto.Data;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +16,9 @@ public class UserDAOTest {
 
     private Database db;
     private User bestUser;
+    private User bestUser2;
     private UserDAO uDao;
+    private Connection conn;
 
     @BeforeEach
     public void setUp() throws DataAccessError {
@@ -22,10 +26,10 @@ public class UserDAOTest {
         // lets create a new instance of the Database class
         db = Database.getInstance();
         // and a new event with random data
-        bestUser = new User("xavi777","disnatas","Lin@y.com","Linus","pickmen","F","3456");
-
+        bestUser = new User("xavi777","disnatas","Lin@y.com","Linus","pickmen","f","3456");
+        bestUser2 = new User("ponyita","disnatas","Lin@y.com","Linus","pickmen","f","3456");
         // Here, we'll open the connection in preparation for the test case to use it
-        Connection conn = db.getConnection();
+        conn = db.getConnection();
         //Then we pass that connection to the EventDAO, so it can access the database.
         uDao = new UserDAO(conn);
         //Let's clear the database as well so any lingering data doesn't affect our tests
@@ -35,10 +39,11 @@ public class UserDAOTest {
 
     @Test
     public void validateUserSuccess() throws DataAccessError {
-        bestUser = new User("pernango","sixtam","Latlabartixy.com","pesxxcv","pickmen","F","3456");
+      //  bestUser = new User("pernango","sixtam","Latlabartixy.com","pesxxcv","pickmen","F","3456");
         uDao.createUser(bestUser);
-
-        assertEquals(true, uDao.validate("pernango", "sixtam"));
+        String username = bestUser.getUsername();
+        String password = bestUser.getPassword();
+        assertEquals(true, uDao.validate(username, password));
 
         uDao.clear();
 
@@ -52,11 +57,10 @@ public class UserDAOTest {
         assertEquals(false, uDao.validate("xavi777", "disnata"));
 
 
-        uDao.clear();
     }
 
     @Test
-    public void insertPass() throws DataAccessError {
+    public void createUserSuccess() throws DataAccessError {
         // Start by inserting an event into the database.
         uDao.createUser(bestUser);
         // Let's use a find method to get the event that we just put in back out.
@@ -74,7 +78,7 @@ public class UserDAOTest {
 
 
     @Test
-    public void insertFail() throws DataAccessError {
+    public void createUserFail() throws DataAccessError {
 
         //username already is being used
         uDao.createUser(bestUser);
@@ -83,34 +87,31 @@ public class UserDAOTest {
     }
 
     @Test
-    public void retrievePass() throws DataAccessError {
+    public void getUserByIDSuccess() throws DataAccessError {
 
-        User secondPerson = new User("8734","notimportant","niki","white","larken","F","8792");
+      //  User secondPerson = new User("8734","notimportant","niki","white","larken","F","8792");
         uDao.createUser(bestUser);
 
-        uDao.createUser(secondPerson);
+        uDao.createUser(bestUser2);
+        String username = bestUser.getUsername();
+        User retrievedObject = uDao.getUserByUsername(username);
 
-        User retrievedObject = uDao.getUserByUsername("8734");
 
-
-        assertNotEquals(uDao.getUserByUsername(bestUser.getPersonID()),retrievedObject);
-
-        assertEquals(secondPerson,retrievedObject);
+        assertEquals(bestUser,retrievedObject);
 
     }
 
     @Test
-    public void retrieveFail() throws NullPointerException, DataAccessError {
+    public void getUserByIDFail() throws NullPointerException, DataAccessError {
         //no username exists
-        User secondPerson = new User("8734","notimportant","niki","white","larken","F","8792");
+       // User newUser = new User("8734","notimportant","niki","white","larken","F","8792");
         uDao.createUser(bestUser);
 
-        uDao.createUser(secondPerson);
+       // uDao.createUser(secondPerson);
 
-        User retrievedObject = uDao.getUserByUsername("notExisti");
+        User retrievedObject = uDao.getUserByUsername("FAKE");
 
-
-        assertEquals(null,retrievedObject.getPersonID());
+        assertNull(retrievedObject.getUsername());
 
 
     }
@@ -119,9 +120,10 @@ public class UserDAOTest {
     @Test
     public void clearSuccess() throws DataAccessError {
         //person is inserted
-        User secondPerson = new User("8734","notimportant","niki","white","larken","F","8792");
+        uDao.clear();
+        User newPerson = new User("8734","notimportant","niki","white","larken","F","8792");
         uDao.createUser(bestUser);
-        uDao.createUser(secondPerson);
+        uDao.createUser(newPerson);
         //Person person = pDao.getPersonObject(bestPerson.getPersonID());
         //data base is cleared from any person
 
@@ -141,9 +143,10 @@ public class UserDAOTest {
     }
 
     @Test
-    public void isDuplicateSuccess()
-    {
-        assertTrue(uDao.isDuplicate("navis462"));
+    public void isDuplicateSuccess() throws DataAccessError {
+        uDao.createUser(bestUser2);
+        String username = bestUser2.getUsername();
+        assertTrue(uDao.isDuplicate(username));
 
 
     }
@@ -155,15 +158,32 @@ public class UserDAOTest {
 
     }
 
+    @Test
+    void getUserByUsernameFail() throws DataAccessError {
+        User newPerson = new User();
+        newPerson = uDao.getUserByUsername("fakeUsername");
+        assertNull(newPerson.getUsername());
+    }
+
+    @Test
+    void getUserByUsernameSuccess() throws DataAccessError {
+        User copy = new User();
+        uDao.createUser(bestUser);
+        String username = bestUser.getUsername();
+        copy = uDao.getUserByUsername(username);
+        assertEquals(bestUser,copy);
+    }
 
     @AfterEach
-    public void tearDown() {
+    public void tearDown() throws SQLException {
         // Here we close the connection to the database file, so it can be opened again later.
         // We will set commit to false because we do not want to save the changes to the database
         // between test cases.
-        db.closeConnection(false);
+        conn.rollback();
 
     }
+
+
 
 
 

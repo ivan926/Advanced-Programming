@@ -17,7 +17,7 @@ public class mnames {
 
     }
 
-    public String[] getMotherNamesArray()
+    public String[] getMaleNamesArray()
     {
         return data;
     }

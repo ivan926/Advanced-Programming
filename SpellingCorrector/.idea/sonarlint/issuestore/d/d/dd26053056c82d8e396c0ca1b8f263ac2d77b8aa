@@ -1,0 +1,38 @@
+
+i	java:S116"ORename this field "Root" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãİâ¢úÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(¦²øÂ
+P	java:S1255"<This block of commented-out lines of code should be removed.(¾Ç¯[
+Q	java:S125<"<This block of commented-out lines of code should be removed.(ùà­É
+P	java:S125H"<This block of commented-out lines of code should be removed.(¾Ç¯[
+V	java:S125\"<This block of commented-out lines of code should be removed.(Û±Œêûÿÿÿÿ
+W	java:S125²"<This block of commented-out lines of code should be removed.(ä€”Œøÿÿÿÿ
+W	java:S125¹"<This block of commented-out lines of code should be removed.(ß”éÔÿÿÿÿÿ
+S
+java:S1854Û"7Remove this useless assignment to local variable "let".(¤ÖÔŞùÿÿÿÿ
+R	java:S125Ú"<This block of commented-out lines of code should be removed.(¦²øÂ
+D
+java:S1481Û"(Remove this unused "let" local variable.(¤ÖÔŞùÿÿÿÿ
+W	java:S125Ü"<This block of commented-out lines of code should be removed.(ˆí¿ûÿÿÿÿ
+>
+java:S1125ì"'Remove the unnecessary boolean literal.(ØĞÉÛ
+S
+java:S1854"7Remove this useless assignment to local variable "let".(¤ÖÔŞùÿÿÿÿ
+R	java:S125"<This block of commented-out lines of code should be removed.(¦²øÂ
+D
+java:S1481"(Remove this unused "let" local variable.(¤ÖÔŞùÿÿÿÿ
+W	java:S125"<This block of commented-out lines of code should be removed.(ˆí¿ûÿÿÿÿ
+>
+java:S1125 "'Remove the unnecessary boolean literal.(ØĞÉÛ
+[
+java:S1854ô"?Remove this useless assignment to local variable "currentNode".(üãŞóÿÿÿÿÿ
+L
+java:S1481ô"0Remove this unused "currentNode" local variable.(üãŞóÿÿÿÿÿ
+R	java:S125ö"<This block of commented-out lines of code should be removed.(¢£Ñõ
+P
+java:S1481ı"4Remove this unused "totalSumOfIndex" local variable.(ºôÙúÿÿÿÿ
+N	java:S106‡"9Replace this use of System.out or System.err by a logger.(’¾ÿk
+Q	java:S125"<This block of commented-out lines of code should be removed.(úòÚU
+H
+java:S1128"-Remove this unused import 'java.util.Locale'.(åğ×±ûÿÿÿÿ
+H
+java:S1128"-Remove this unused import 'java.util.Random'.(èøÉ›ùÿÿÿÿ

@@ -1,0 +1,16 @@
+
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èÀ”˜ÿÿÿÿÿ
+E
+java:S5411"*Use the primitive boolean expression here.(ÏóÍüÿÿÿÿ
+L
+java:S5411+"*Use the primitive boolean expression here.(¸œ˜ùÿÿÿÿ8Â×·á0
+@
+java:S54114"*Use the primitive boolean expression here.(•€
+R
+java:S4973&"<Strings and Boxed types should be compared using "equals()".(ÚÁî›
+C	java:S108")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(û“¹¦şÿÿÿÿ
+N	java:S106 "9Replace this use of System.out or System.err by a logger.(Ÿ·÷ö
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(ÙŠ¥Ï
+C	java:S1081")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿ
+N	java:S1066"9Replace this use of System.out or System.err by a logger.(Éºü¿

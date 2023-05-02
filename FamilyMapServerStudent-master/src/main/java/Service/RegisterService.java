@@ -8,11 +8,15 @@ import model.User;
 import model.authtoken;
 
 import java.sql.Connection;
+import java.sql.SQLException;
+
 
 /**
  * THis will carry out the /user/register webAPI
  */
 public class RegisterService {
+
+    Database database;
 
     /**
      * Executes the web api called by the user in this case to register a new user
@@ -28,8 +32,15 @@ public class RegisterService {
 //        System.out.println(newPersonID.toString());
 //        newPersonID = UUID.randomUUID();
 //        System.out.println(newPersonID.toString());
-        Connection conn;
-        Database database;
+        Connection conn = null;
+        Database database = null;
+
+        try {
+            database = Database.getInstance();
+            conn = database.getConnection();
+        } catch (DataAccessError dataAccessError) {
+            dataAccessError.printStackTrace();
+        }
         UserDAO userdao;
         AuthtokenDAO authtokendao;
         authtoken authtokenModelObject;
@@ -62,9 +73,12 @@ public class RegisterService {
 
 
 
-            database = Database.getInstance();
-            System.out.println("Got an instance of the Database");
-            conn = database.getConnection();
+
+
+//            conn = database.getConnection();
+//            conn = database.getConnection();
+
+            System.out.println(conn);
             System.out.println("Passing database connection to UserDAO");
             userdao = new UserDAO(conn);
 
@@ -77,7 +91,10 @@ public class RegisterService {
             System.out.println("registering new user...");
             userdao.createUser(newUser);
 
-            generateFourGenerations(newUser,conn);
+            System.out.println("Generating User Family Tree");
+            FamilyTree tree = new FamilyTree(newUser,conn);
+            tree.fillTree();
+            //generateFourGenerations(newUser,conn);
 
             userdao.validate(newUser.getUsername(), newUser.getPassword());
 
@@ -86,9 +103,10 @@ public class RegisterService {
             System.out.println("passing database connection to AUTHTOKEN_DAO");
             authtokendao = new AuthtokenDAO(conn);
             System.out.println("passing authtoken model object to create token");
-            authTokenForUser = authTokenForUser = authtokendao.createToken(authtokenModelObject);
+            authTokenForUser = authtokendao.createToken(authtokenModelObject);
             System.out.println("AuthToken created and returned " + authTokenForUser);
-            database.closeConnection(false);
+
+//
 
 
         } catch (DataAccessError dataAccessError) {
@@ -102,6 +120,13 @@ public class RegisterService {
 
         }
 
+//        database.closeConnection(true);
+        try {
+            conn.commit();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+
 
         RegisterResponse regResponse = new RegisterResponse(authTokenForUser,newUser.getUsername(),newUser.getPersonID());
 
@@ -110,19 +135,5 @@ public class RegisterService {
 
     }
 
-    void generateFourGenerations(User user,Connection conn)
-    {
-        json fillInDatabase;
-        fillInDatabase = json.getInstance();
-        fnames fatherNames = fillInDatabase.getFatherNames();
-        mnames motherNames = fillInDatabase.getMotherNames();
-        snames spouseNames = fillInDatabase.getSurNames();
-        LocationData locations = fillInDatabase.getLocationArray();
-
-        PersonDAO person = new PersonDAO(conn);
-
-        System.out.println("Filled 4 generations");
-
-    }
 
 }

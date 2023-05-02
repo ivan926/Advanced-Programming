@@ -1,0 +1,33 @@
+
+J
+java:S3740o"/Provide the parametrized type for this generic.(®Ó¨šÿÿÿÿÿ
+o
+java:S22933"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÿÏæŠ
+t
+java:S2293M"YReplace the type specification in this constructor call with the diamond operator ("<>").(—Î£ßıÿÿÿÿ
+t
+java:S2293l"YReplace the type specification in this constructor call with the diamond operator ("<>").(†·ùĞÿÿÿÿÿ
+p
+java:S2293•"YReplace the type specification in this constructor call with the diamond operator ("<>").(Øºìô
+o
+java:S2293²"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÜÊ¡e
+u
+java:S2293½"YReplace the type specification in this constructor call with the diamond operator ("<>").(µšıèúÿÿÿÿ
+F
+java:S5411…"*Use the primitive boolean expression here.(’ÃÍœûÿÿÿÿ
+[
+java:S2095"EUse try-with-resources or close this "Scanner" in a "finally" clause.(ú—÷
+{
+java:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¨âàøÿÿÿÿ
+]
+java:S1854l"BRemove this useless assignment to local variable "possibleValues".(†·ùĞÿÿÿÿÿ
+N
+java:S1481l"3Remove this unused "possibleValues" local variable.(†·ùĞÿÿÿÿÿ
+]
+java:S1854½"ARemove this useless assignment to local variable "copyContainer".(µšıèúÿÿÿÿ
+i	java:S100Ö"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™™şºøÿÿÿÿ
+S
+java:S1854ï"7Remove this useless assignment to local variable "str".(÷ïä«üÿÿÿÿ
+D
+java:S1481ï"(Remove this unused "str" local variable.(÷ïä«üÿÿÿÿ
+i	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İşšãøÿÿÿÿ

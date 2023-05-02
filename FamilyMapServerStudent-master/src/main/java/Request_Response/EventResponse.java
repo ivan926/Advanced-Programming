@@ -1,15 +1,26 @@
 package Request_Response;
 
+import model.Event;
+
 /**
  * Returns potential response or error of the event request
  *
  */
 public class EventResponse {
 
+
+    public EventResponse() {
+
+    }
+
     /**
      * Prints out the response body
      */
     public void printRequest(){}
+    /**
+     * Event array
+     */
+    private Event[] data;
 
     /**
      * the assocaited username with this event
@@ -22,11 +33,11 @@ public class EventResponse {
     /**
      * the latitude of the event
      */
-    private float latitude;
+    private Float latitude;
     /**
      * the longitude of the event
      */
-    private float longitude;
+    private Float longitude;
     /**
      * country the event took place
      */
@@ -42,7 +53,7 @@ public class EventResponse {
     /**
      * the year the event took place
      */
-    private int year;
+    private Integer year;
     /**
      * the boolean value that states if the request was a success
      */
@@ -51,6 +62,8 @@ public class EventResponse {
      * the potential error message
      */
     private String message;
+
+    private String personID;
 
     /**
      * the success response body value assignments
@@ -62,9 +75,8 @@ public class EventResponse {
      * @param city
      * @param eventType
      * @param year
-     * @param success
      */
-    public EventResponse(String associatedUsername, String eventID, float latitude, float longitude, String country, String city, String eventType, int year, Boolean success) {
+    public EventResponse(String associatedUsername, String eventID, float latitude, float longitude, String country, String city, String eventType, int year, String PersonID) {
         this.associatedUsername = associatedUsername;
         this.eventID = eventID;
         this.latitude = latitude;
@@ -73,7 +85,29 @@ public class EventResponse {
         this.city = city;
         this.eventType = eventType;
         this.year = year;
-        this.success = success;
+        this.personID = PersonID;
+        success = true;
+
+    }
+
+    public EventResponse(Event event) {
+        this.associatedUsername = event.getAssociatedUsername();
+        this.personID = event.getPersonID();
+        this.eventID = event.getEventID();
+        this.latitude = event.getLatitude();
+        this.longitude = event.getLongitude();
+        this.country = event.getCountry();
+        this.city = event.getCity();
+        this.eventType = event.getEventType();
+        this.year = event.getYear();
+        success = true;
+
+
+    }
+
+    public EventResponse(Event[] event) {
+       success = true;
+       this.data = event;
     }
 
     /**
@@ -82,7 +116,7 @@ public class EventResponse {
      * @param message
      */
 
-    public EventResponse(Boolean success, String message) {
+    public EventResponse( String message,Boolean success) {
         this.success = success;
         this.message = message;
     }
@@ -117,6 +151,10 @@ public class EventResponse {
 
     public int getYear() {
         return year;
+    }
+
+    public String getPersonID() {
+        return personID;
     }
 
     public Boolean getSuccess() {

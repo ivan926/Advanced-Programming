@@ -1,0 +1,56 @@
+{
+  "users":[
+    {
+      "username":"sheila",
+      "password":"parker",
+      "email":"sheila@parker.com",
+      "firstName":"Sheila",
+      "lastName":"Parker",
+      "gender":"f",
+      "personID":"Sheila_Parker"
+    },
+    {
+      "username":"patrick",
+      "password":"spencer",
+      "email":"patrick@spencer.com",
+      "firstName":"Patrick",
+      "lastName":"Spencer",
+      "gender":"m",
+      "personID":"Patrick_Spencer"
+    }
+  ],
+  "persons":[
+    {
+      "firstName":"Sheila",
+      "gender":"f",
+      "personID":"Sheila_Parker",
+      "spouseID":"Davis_Hyer",
+      "fatherID":"Blaine_McGary",
+      "motherID":"Betty_White",
+      "associatedUsername":"sheila"
+    },
+    {
+      "firstName":"Davis",
+      "lastName":"Hyer",
+      "gender":"m",
+      "personID":"Davis_Hyer",
+      "spouseID":"Sheila_Parker",
+      "associatedUsername":"sheila"
+    }
+  ],
+  "events":[
+
+    {
+      "eventType":"marriage",
+      "personID":"Golden_Boy",
+      "city":"Boise",
+      "country":"United States",
+      "latitude":43.6167,
+      "longitude":-115.8,
+      "year":2016,
+      "eventID":"Together_Forever",
+      "associatedUsername":"patrick"
+    }
+  ]
+}
+

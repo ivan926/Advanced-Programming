@@ -1,6 +1,7 @@
 package DAO;
 
 import model.User;
+import org.sqlite.SQLiteErrorCode;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +12,7 @@ import java.sql.SQLException;
  * User Data access object interfaces only with the user table, it contains function that manipulate
  * the user table for in our database.
  */
-public class UserDAO {
+public class UserDAO extends DAO{
     /**
      * this is the connection to the database it will remain static
      */
@@ -30,6 +31,12 @@ public class UserDAO {
         //marks we can change them later with help from the statement
         String sql = "INSERT INTO User (username, password, email, firstName, lastName, " +
                 "gender, personID) VALUES(?,?,?,?,?,?,?)";
+
+        String gender = user.getGender();
+        if(user.getGender() != null)
+        {
+           gender = gender.toLowerCase();
+        }
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             //Using the statements built-in set(type) functions we can pick the question mark we want
             //to fill in and give it a proper value. The first argument corresponds to the first
@@ -39,16 +46,19 @@ public class UserDAO {
             stmt.setString(3, user.getEmail());
             stmt.setString(4, user.getFirstName());
             stmt.setString(5, user.getLastName());
-            stmt.setString(6, user.getGender());
+            stmt.setString(6, gender);
             stmt.setString(7, user.getPersonID());
 
 
 
             stmt.executeUpdate();
             System.out.println("\nExecuting SQL statements");
-        } catch (SQLException e) {
+        } catch (SQLException e ) {
             e.printStackTrace();
-            throw new DataAccessError("Error encountered while inserting an user into the database");
+            System.out.println(e.getMessage());
+            throw new DataAccessError(e.getErrorCode(),e.getMessage());
+           // throw new DataAccessError( String.valueOf(e.getErrorCode()));
+
         }
 
         System.out.println("User has been created");
@@ -58,32 +68,39 @@ public class UserDAO {
     {
         Boolean userNameExist = false;
 
+        System.out.println("Finding out if duplicate username exist");
+        System.out.println("Current username is " + username);
         String sql = "SELECT username FROM User WHERE username = ?";
         String SQLUsername = null;
-
+        System.out.println("Query has been set");
         try(PreparedStatement stmnt = conn.prepareStatement(sql))
         {
+            System.out.println("In try catch setting place holder to value");
             stmnt.setString(1,username);
-
+            System.out.println("Executing query");
            ResultSet rs = stmnt.executeQuery();
-
+            System.out.println("Iterating result set");
             while(rs.next())
             {
                 SQLUsername = rs.getString("username");
 
-            }
 
+            }
+            System.out.println("Value of SQLUSERNAME = "+SQLUsername );
 
             if(username.equals(SQLUsername))
             {
+                System.out.println("Username already exists");
                 userNameExist = true;
             }
 
-
+            System.out.println("Exiting successfully");
 
         }
         catch(SQLException exception)
         {
+            exception.printStackTrace();
+            System.out.println(exception.getMessage());
             System.out.println("Something has gone wrong when verifying duplicate");
 
         }
@@ -141,15 +158,16 @@ public class UserDAO {
      * @param userID The users UID
      * @return Will return the users object along with its properties
      */
-    User getUserById(String userID)throws DataAccessError{
+    public User getUserById(String userID)throws DataAccessError{
 
-        String sql = "select username, password, email, firstName, lastName, Gender, personID " +
-                "where id = ?";
+        String sql = "select * FROM User WHERE username = ?";
         User user;
+
         try(PreparedStatement stmt = conn.prepareStatement(sql))
             {
-                ResultSet rs = stmt.executeQuery();
                 stmt.setString(1, userID);
+                ResultSet rs = stmt.executeQuery();
+
 
 
             String username = rs.getString("username");
@@ -184,7 +202,7 @@ public class UserDAO {
      * @param username The users unique username
      * @return Will return the users object along with its properties
      */
-    User getUserByUsername(String username) throws DataAccessError {
+    public User getUserByUsername(String username) throws DataAccessError {
         String sql = "select username, password, email, firstName, lastName, gender, personID FROM User " +
                 "where username = ?";
         User user;
@@ -244,25 +262,7 @@ public class UserDAO {
         return count;
     }
 
-    /**
-     * We are removing a user row from the user table
-     * @param user we will use this object to find the row we wish to delete using its username property
-     * @throws DataAccessError exception
-     */
-    public void deleteUser(User user)throws DataAccessError{}
 
-    /**
-     * We will update a table, by editing values within the rows email,firstname,lastname,gender
-     * @param user we will pass through an object that is a model of the database and update the results
-     *  so we know the current data in memory
-     *  @throws DataAccessError exception
-     */
-    public void update(User user)throws DataAccessError{}
 
-    /**
-     * This will receive a list of users, this is used in conjunction with the load function
-     * @param listOfUsers array of user objects
-     * @throws DataAccessError
-     */
-    public void insertUsers(User[] listOfUsers)throws DataAccessError{}
+
 }

@@ -1,5 +1,6 @@
 package FileHandler;
 
+import DAO.AuthtokenDAO;
 import Request_Response.RegisterRequest;
 import Request_Response.RegisterResponse;
 import Service.RegisterService;
@@ -48,8 +49,15 @@ public class RegisterHandler extends Handler {
 						RegisterResponse result = service.register(request);
 
 						String JSON_ResponseBody = gson.toJson(result);
+						if(result.isSuccess()) {
 
-						exchange.sendResponseHeaders(HttpURLConnection.HTTP_OK, 0);
+                            exchange.sendResponseHeaders(HttpURLConnection.HTTP_OK, 0);
+                        }
+						else
+                        {
+                            exchange.sendResponseHeaders(HttpURLConnection.HTTP_BAD_REQUEST, 0);
+
+                        }
 						OutputStream resBody = exchange.getResponseBody();
 						System.out.println(JSON_ResponseBody);
 						writeString(JSON_ResponseBody,resBody);

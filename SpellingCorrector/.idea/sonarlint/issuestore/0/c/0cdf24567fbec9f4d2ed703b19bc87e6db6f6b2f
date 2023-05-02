@@ -1,0 +1,12 @@
+
+`
+java:S2095 "EUse try-with-resources or close this "Scanner" in a "finally" clause.(¼Ê…ÿÿÿÿÿ
+Z
+java:S2095!"EUse try-with-resources or close this "Scanner" in a "finally" clause.(üâ³~
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¹İÑøÿÿÿÿ
+V	java:S125/"<This block of commented-out lines of code should be removed.(çóüÿÿÿÿ
+P	java:S1251"<This block of commented-out lines of code should be removed.(ôĞ¢N
+Q	java:S125E"<This block of commented-out lines of code should be removed.(Œœ‰
+V	java:S125I"<This block of commented-out lines of code should be removed.(£ıôÄûÿÿÿÿ
+Q	java:S125X"<This block of commented-out lines of code should be removed.(İŠŒµ
+S	java:S106f"9Replace this use of System.out or System.err by a logger.(É¤¨üÿÿÿÿ

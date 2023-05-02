@@ -10,9 +10,9 @@ import java.io.Reader;
 public class json {
     static json fillData;
     LocationData locationArray;
-    mnames motherNames;
-    fnames fatherNames;
-    snames spouseNames;
+    mnames maleNames;
+    fnames femaleNames;
+    snames surnameNames;
     Gson gson;
     Reader reader = null;
 
@@ -21,25 +21,25 @@ public class json {
         return locationArray;
     }
 
-    public mnames getMotherNames() {
-        return motherNames;
+    public mnames getMaleNames() {
+        return maleNames;
     }
 
-    public fnames getFatherNames() {
-        return fatherNames;
+    public fnames getFemaleNames() {
+        return femaleNames;
     }
 
     public snames getSurNames() {
-        return spouseNames;
+        return surnameNames;
     }
 
     private json()
     {
         gson = new Gson();
         locationArray = new LocationData();
-        fatherNames = new fnames();
-        motherNames = new mnames();
-        spouseNames = new snames();
+        femaleNames = new fnames();
+        maleNames = new mnames();
+        surnameNames = new snames();
 
 
 
@@ -51,15 +51,15 @@ public class json {
 
         try {
             reader = new FileReader("json/snames.json");
-            spouseNames = gson.fromJson(reader, snames.class);
+            surnameNames = gson.fromJson(reader, snames.class);
             reader.close();
 
             reader = new FileReader("json/mnames.json");
-            motherNames = gson.fromJson(reader, mnames.class);
+            maleNames = gson.fromJson(reader, mnames.class);
             reader.close();
 
             reader = new FileReader("json/fnames.json");
-            fatherNames = gson.fromJson(reader, fnames.class);
+            femaleNames = gson.fromJson(reader, fnames.class);
             reader.close();
 
             reader = new FileReader("json/locations.json");

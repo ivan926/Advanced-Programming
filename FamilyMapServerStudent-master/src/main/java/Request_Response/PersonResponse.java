@@ -7,6 +7,10 @@ import model.Person;
  */
 public class PersonResponse {
 
+    public PersonResponse() {
+
+    }
+
     /**
      * Prints out the response body
      */
@@ -15,23 +19,23 @@ public class PersonResponse {
     /**
      * The users associated name to the person
      */
-    private String associatedUsername;
+    private String associatedUsername = null;
     /**
      * the person ID of this person
      */
-    private String personID;
+    private String personID = null;
     /**
      * first name of the person
      */
-    private String firstName;
+    private String firstName = null;
     /**
      * last name of the person
      */
-    private String lastName;
+    private String lastName = null;
     /**
      * gender of the person either F or M
      */
-    private String gender;
+    private String gender = null;
     /**
      * the persons father ID
      */
@@ -91,6 +95,19 @@ public class PersonResponse {
         this.motherID = motherID;
         this.spouseID = spouseID;
         this.success = success;
+    }
+
+
+    public PersonResponse(Person person) {
+        this.associatedUsername = person.getAssociatedUsername();
+        this.personID = person.getPersonID();
+        this.firstName = person.getFirstName();
+        this.lastName = person.getLastName();
+        this.gender = person.getGender();
+        this.fatherID = person.getFatherID();
+        this.motherID = person.getMotherID();
+        this.spouseID = person.getSpouseID();
+        this.success = true;
     }
 
     /**

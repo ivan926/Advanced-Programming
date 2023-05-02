@@ -1,0 +1,19 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ä”òª
+˜
+java:S1186±"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ííù¼
+
+java:S1186¹"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ñ•¼Øùÿÿÿÿ
+˜
+java:S1186À"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—í¥´
+<
+java:S3010"!Remove this assignment of "conn".(Øó¶ìÿÿÿÿÿ
+P
+java:S2209"5Change this instance-reference to a static reference.(Øó¶ìÿÿÿÿÿ
+7
+java:S11165"Remove this empty statement.(ôŸìúÿÿÿÿ
+:
+java:S2695M"%PreparedStatement indices start at 1.(‡˜Ö&
+m
+java:S3457¤"Q%n should be used in place of \n to produce the platform-specific line separator.(îš¢ïúÿÿÿÿ
+T	java:S106¤"9Replace this use of System.out or System.err by a logger.(îš¢ïúÿÿÿÿ

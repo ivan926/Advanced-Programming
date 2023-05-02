@@ -38,12 +38,30 @@ public class RegisterServiceTest {
 
     }
 
+    @Test
+    void replicateIssueOnServer()
+    {
+        String reqData = "{ \"username\": \"existent\", \"password\": \"bananas\", \"email\":\"navis463@pmail.com\"," +
+                "\"firstName\": \"Defenia\", \"lastName\":\"Baraniston\",\"gender\":\"m\" }";
+
+        String reqData2 = "{ \"username\": \"existent2\", \"password\": \"bananas\", \"email\":\"navis463@pmail.com\"," +
+                "\"firstName\": \"Defenia\", \"lastName\":\"Baraniston\",\"gender\":\"m\" }";
+        regRequest = (RegisterRequest) gson.fromJson(reqData, RegisterRequest.class);
+
+        regResponse = regService.register(regRequest);
+
+        regRequest = (RegisterRequest) gson.fromJson(reqData2, RegisterRequest.class);
+
+        regResponse = regService.register(regRequest);
+
+    }
 
     @Test
     void UserNameAlreadyBeingUsedError()
     {
         String reqData = "{ \"username\": \"existent\", \"password\": \"bananas\", \"email\":\"navis463@pmail.com\"," +
                 "\"firstName\": \"Defenia\", \"lastName\":\"Baraniston\",\"gender\":\"m\" }";
+
 
         regRequest = (RegisterRequest) gson.fromJson(reqData, RegisterRequest.class);
 

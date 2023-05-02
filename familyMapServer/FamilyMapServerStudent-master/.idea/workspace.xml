@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f7ceb8b8-c21e-48e1-b09f-954ac7423440" name="Default Changelist" comment="All functions and classes for the FMS design project">
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/jars/apiguardian-api-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/jars/junit-jupiter-api-5.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/jars/junit-platform-commons-1.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/jars/opentest4j-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/notsobig.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/src/passoff/SpellTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/src/passoff/TrieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/src/spell/INode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/src/spell/ISpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/src/spell/ITrie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/src/spell/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/src/spell/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/src/spell/SpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/src/spell/Trie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/word.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CS240 Exam practice/SpellingCorrector/words.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../EvilHangman/EvilHangman.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/dictionary.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/empty.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/gameWords.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/jars/apiguardian-api-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/jars/opentest4j-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/small.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/src/hangman/EmptyDictionaryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/src/hangman/EvilHangman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/src/hangman/EvilHangmanGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/src/hangman/GuessAlreadyMadeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/src/hangman/IEvilHangmanGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/EvilHangman/src/passoff/HangmanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/jars/apiguardian-api-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/jars/junit-jupiter-api-5.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/jars/junit-platform-commons-1.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/jars/opentest4j-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/notsobig.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/src/passoff/SpellTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/src/passoff/TrieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/src/spell/INode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/src/spell/ISpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/src/spell/ITrie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/src/spell/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/src/spell/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/src/spell/SpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/src/spell/Trie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/word.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/SpellingCorrector/words.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SpellingCorrector/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/dictionary.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/empty.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/gameWords.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/jars/apiguardian-api-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/jars/opentest4j-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/small.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/src/hangman/EmptyDictionaryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/src/hangman/EvilHangman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/src/hangman/EvilHangmanGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/src/hangman/GuessAlreadyMadeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/src/hangman/IEvilHangmanGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/EvilHangman/src/passoff/HangmanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/jars/apiguardian-api-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/jars/junit-jupiter-api-5.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/jars/junit-platform-commons-1.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/jars/opentest4j-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/notsobig.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/src/passoff/SpellTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/src/passoff/TrieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/src/spell/INode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/src/spell/ISpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/src/spell/ITrie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/src/spell/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/src/spell/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/src/spell/SpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/src/spell/Trie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/word.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/SpellingCorrector/words.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EvilHangman/src/hangman/EvilHangmanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../EvilHangman/src/hangman/EvilHangmanGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpellingCorrector/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpellingCorrector/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpellingCorrector/out/production/SpellingCorrector/spell/SpellCorrector.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpellingCorrector/out/production/SpellingCorrector/spell/SpellCorrector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpellingCorrector/src/spell/Trie.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpellingCorrector/src/spell/Trie.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="2LRR1MELqTaFsCxPIxmepjLNk6q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="FileHandler" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/DAO" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.LoginHandlerTest.loginTest">
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="FamilyMapServerStudent" />
+      <option name="PROGRAM_PARAMETERS" value="8080" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FamilyMapServerStudent" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FileHanderTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="FileHanderTests" />
+      <option name="MAIN_CLASS_NAME" value="FileHanderTests.LoginHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginHandlerTest.loginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FamilyMapServerStudent" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FileHanderTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="FileHanderTests" />
+      <option name="MAIN_CLASS_NAME" value="FileHanderTests.LoginHandlerTest" />
+      <option name="METHOD_NAME" value="loginTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Servertest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FamilyMapServerStudent" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Server" />
+      <option name="MAIN_CLASS_NAME" value="Server.Servertest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Servertest.passHttpRequestForRegister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FamilyMapServerStudent" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Server" />
+      <option name="MAIN_CLASS_NAME" value="Server.Servertest" />
+      <option name="METHOD_NAME" value="passHttpRequestForRegister" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Server" />
+      <item itemvalue="JUnit.Servertest.passHttpRequestForRegister" />
+      <item itemvalue="JUnit.Servertest" />
+      <item itemvalue="JUnit.LoginHandlerTest.loginTest" />
+      <item itemvalue="JUnit.LoginHandlerTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LoginHandlerTest.loginTest" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.LoginHandlerTest" />
+        <item itemvalue="JUnit.Servertest.passHttpRequestForRegister" />
+        <item itemvalue="JUnit.Servertest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f7ceb8b8-c21e-48e1-b09f-954ac7423440" name="Default Changelist" comment="" />
+      <created>1675831693448</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675831693448</updated>
+      <workItem from="1675831695095" duration="157000" />
+      <workItem from="1675831870873" duration="1064000" />
+      <workItem from="1676349175232" duration="314000" />
+      <workItem from="1676349535263" duration="176000" />
+      <workItem from="1676519776148" duration="675000" />
+      <workItem from="1676616241844" duration="2563000" />
+      <workItem from="1676694500602" duration="33010000" />
+      <workItem from="1677556979769" duration="30305000" />
+      <workItem from="1678157070943" duration="5666000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="All functions and classes for the FMS design project" />
+    <option name="LAST_COMMIT_MESSAGE" value="All functions and classes for the FMS design project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/DAO/PersonDAOTest.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/DAO/PersonDAOTest.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/DAO/UserDAOTest.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/DAO/PersonDAOTest.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Server.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Server/Servertest.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Server/Servertest.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/FileHanderTests/LoginHandlerTest.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/DAO/UserDAO.java</url>
+          <line>111</line>
+          <properties class="DAO.UserDAO" method="getUserByUsername">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/Server/Servertest.java</url>
+          <line>24</line>
+          <properties class="Server.Servertest" method="passHttpRequestForRegister">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="20" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.sqlite.jdbc4.JDBC4ResultSet" memberName="emptyResultSet" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>

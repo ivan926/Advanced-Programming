@@ -27,21 +27,21 @@ public class FileHandler implements HttpHandler {
             // state of the server).
             if (exchange.getRequestMethod().toLowerCase().equals("get")) {
                 String URLPath = exchange.getRequestURI().toString();
-
-                if(URLPath.equals( null) || URLPath.equals("index.html") || URLPath.equals("/"))
+                System.out.println(URLPath);
+                if(URLPath.equals(null) || URLPath.equals("index.html") || URLPath.equals("/"))
                 {
                     URLPath = "/index.html";
                     System.out.println("/index.html");
 
                 }
 
-                if(URLPath.equals("/favicon.ico"))
+                else if(URLPath.equals("/favicon.ico"))
                 {
                     URLPath = "/favicon.ico";
                     System.out.println("/favicon.ico");
                 }
 
-                if(URLPath.equals("/css/main.css"))
+                else if(URLPath.equals("/css/main.css"))
                 {
                     URLPath = "/css/main.css";
                     System.out.println("/css/main.css");
@@ -49,8 +49,12 @@ public class FileHandler implements HttpHandler {
 
                 }
 
+                else {
+                    URLPath = "/HTML/404.html";
+                    System.out.println("/HTML/404.html");
 
 
+                }
 
 
 
@@ -58,13 +62,20 @@ public class FileHandler implements HttpHandler {
 
                 String filePath = "web" + URLPath;
 
-
+                System.out.println(filePath);
 
                 File webServer = new File(filePath);
 
+
                 //System.out.println(webServer.canRead());
                 if(webServer.exists()) {
-                    exchange.sendResponseHeaders(HttpURLConnection.HTTP_OK, 0);
+                    if(filePath.equals("web/HTML/404.html"))
+                    {
+                        exchange.sendResponseHeaders(HttpURLConnection.HTTP_NOT_FOUND, 0);
+                    }
+                    else {
+                        exchange.sendResponseHeaders(HttpURLConnection.HTTP_OK, 0);
+                    }
                     OutputStream respBody = exchange.getResponseBody();
                    // System.out.println(webServer.toPath().toString());
                     Files.copy(webServer.toPath(),respBody);
@@ -72,6 +83,8 @@ public class FileHandler implements HttpHandler {
 
                     success = true;
                 }
+
+
 
 
 

@@ -1,0 +1,49 @@
+
+F
+java:S3740"/Provide the parametrized type for this generic.(¸·æô
+K
+java:S3740„"/Provide the parametrized type for this generic.(ş¹ø ùÿÿÿÿ
+K
+java:S3740„"/Provide the parametrized type for this generic.(ş¹ø ùÿÿÿÿ
+K
+java:S3740«"/Provide the parametrized type for this generic.(Õ³ª³ıÿÿÿÿ
+K
+java:S3740°"/Provide the parametrized type for this generic.(®Ó¨šÿÿÿÿÿ
+F
+java:S3740¦"/Provide the parametrized type for this generic.(ûÓ…Ö
+K
+java:S3740â"/Provide the parametrized type for this generic.(¹Å‚úÿÿÿÿ
+F
+java:S3740®"/Provide the parametrized type for this generic.(èš£à
+u
+java:S2293â"YReplace the type specification in this constructor call with the diamond operator ("<>").(ùƒóÿÿÿÿÿ
+g	java:S117õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îü–
+F
+java:S5411Ã"*Use the primitive boolean expression here.(‘÷Àµùÿÿÿÿ
+[
+java:S2095'"EUse try-with-resources or close this "Scanner" in a "finally" clause.(ÃÖè
+o	java:S116"URename this field "Dictionary" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êÑİãøÿÿÿÿ
+{
+java:S1149µ"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(íú™§úÿÿÿÿ
+P	java:S125"<This block of commented-out lines of code should be removed.(âÈÅ
+Q	java:S1256"<This block of commented-out lines of code should be removed.(‘ÎÁÍ
+V	java:S125g"<This block of commented-out lines of code should be removed.(ˆÅ‹±ÿÿÿÿÿ
+W	java:S125™"<This block of commented-out lines of code should be removed.(¦¶–©şÿÿÿÿ
+W	java:S125Î"<This block of commented-out lines of code should be removed.(¥¬Šşøÿÿÿÿ
+W
+java:S1858‡"@"getKey" returns a string, there's no need to call "toString()".(«ğüé
+W	java:S125Ÿ"<This block of commented-out lines of code should be removed.(éóëÉúÿÿÿÿ
+d	java:S100Ä"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë¶æô
+R	java:S125Î"<This block of commented-out lines of code should be removed.(úÇŒÕ
+]
+java:S1854â"ARemove this useless assignment to local variable "tempContainer".(ùƒóÿÿÿÿÿ
+W	java:S125‚"<This block of commented-out lines of code should be removed.(ÃºúÖùÿÿÿÿ
+d	java:S100¦"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÓ…Ö
+Q	java:S125Á"<This block of commented-out lines of code should be removed.(‰ÏÓ
+W	java:S125Ô"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+R	java:S125Ö"<This block of commented-out lines of code should be removed.(ì–Ó
+i	java:S100â"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹Å‚úÿÿÿÿ
+W	java:S125†"<This block of commented-out lines of code should be removed.(ÑÒ·¿úÿÿÿÿ
+d	java:S100®"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èš£à
+W	java:S125Ñ"<This block of commented-out lines of code should be removed.(ÑÒ·¿úÿÿÿÿ
+R	java:S125õ"<This block of commented-out lines of code should be removed.(ì–Ó

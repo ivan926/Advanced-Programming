@@ -10,11 +10,11 @@ public class authtoken {
     /**
      * Authorization random token generated for the user
      */
-    private String authToken;
+    private String authToken = null;
     /**
      * The users created username
      */
-    private String username;
+    private String username = null;
 
     /**
      * Takes in the users username and Authorization token to initialize instance variables

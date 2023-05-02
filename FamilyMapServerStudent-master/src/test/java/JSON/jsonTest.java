@@ -45,7 +45,7 @@ public class jsonTest {
 
     @Test
     void printfnamesTest()  {
-        fatherNames = fillInData.getFatherNames();
+        fatherNames = fillInData.getFemaleNames();
         fatherNames.printArrays();
 
 
@@ -53,7 +53,7 @@ public class jsonTest {
 
     @Test
     void printMnamesTest()  {
-        motherNames = fillInData.getMotherNames();
+        motherNames = fillInData.getMaleNames();
         motherNames.printArrays();
 
 

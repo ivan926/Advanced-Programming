@@ -81,10 +81,20 @@ public class Server {
         // "/games/list" URL path, it will forward the request to ListGamesHandler
         // for processing.
         server.createContext("/user/register", new RegisterHandler());
-       // server.createContext("/games/list", new ListGamesHandler());
 
+        server.createContext("/clear", new ClearHandler());
+
+        server.createContext("/login", new LoginHandler());
+
+        server.createContext("/fill/", new FillHandler());
 
         server.createContext("/user/login", new LoginHandler());
+
+        server.createContext("/event", new EventHandler());
+
+        server.createContext("/load", new LoadHandler());
+
+        server.createContext("/person", new PersonHandler());
 
         // Create and install the "default" (or "file") HTTP handler.
         // All requests that do not match the other handler URLs

@@ -1,0 +1,8 @@
+
+H
+java:S5411µ"*Use the primitive boolean expression here.(ØĞÉÛ8ÜŠÛ¯á0
+S
+java:S2589¯"7Remove this expression which always evaluates to "true"(ñ’Åøÿÿÿÿ
+i	java:S116"ORename this field "Root" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ƒşÿÿÿÿ
+E
+java:S1125µ"'Remove the unnecessary boolean literal.(ØĞÉÛ8•‹Û¯á0

@@ -1,0 +1,7 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ã“Þ›ùÿÿÿÿ
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ãœË‘ýÿÿÿÿ
+V	java:S107T"AConstructor has 9 parameters, which is greater than 7 authorized.(“ÿ°¸
+=
+java:S1068F"(Remove this unused "data" private field.(ø®§M
