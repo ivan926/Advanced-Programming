@@ -12,25 +12,23 @@ import java.util.stream.IntStream;
 public class SpellCorrector implements ISpellCorrector{
     private Trie dictionary;
     HashMap<String, Integer> suggestedWords;
-    ArrayList<String> editDistanceOneArray;
-    ArrayList<String> editDistanceTwoArray;
+//    ArrayList<String> editDistanceOneArray;
+//    ArrayList<String> editDistanceTwoArray;
 
     public SpellCorrector()
     {
         dictionary = new Trie();
         suggestedWords = new HashMap<String, Integer>();
-        editDistanceOneArray = new ArrayList();
-        editDistanceTwoArray = new ArrayList();
+//        editDistanceOneArray = new ArrayList();
+//        editDistanceTwoArray = new ArrayList();
     }
 
     @Override
     public void useDictionary(String dictionaryFileName) throws IOException {
 
         File input = new File(dictionaryFileName);
-        Path fileName = Path.of("/Users/ivanaarriolalugo/Downloads/SpellingCorrector/output.txt");
-        File output = new File("/Users/ivanaarriolalugo/Downloads/SpellingCorrector/output.txt");
+
 		Scanner scanner = new Scanner(input);
-        Scanner scanner2 = new Scanner(input);
 
 
 		while(scanner.hasNext())
@@ -38,22 +36,13 @@ public class SpellCorrector implements ISpellCorrector{
 			dictionary.add(scanner.next());
 		}
 
-//        while(scanner2.hasNext())
-//        {
-//
-//            String words =  scanner2.next();
-//            //System.out.println(words);
-//
-//            Files.writeString(fileName,words);
-//
-//        }
 
 
     }
 
 
 
-    private void deletionDistance(String inputWord)
+    private void deletionDistance(String inputWord, ArrayList editDistanceOneArray)
     {
 
         String temp = inputWord;
@@ -63,14 +52,9 @@ public class SpellCorrector implements ISpellCorrector{
         //System.out.println(temp);
         for(int i = 0; i < inputWord.length(); i++)
         {
-           // temp = inputWord;
 
             listOfCharacters.add(array[i]);
-            //System.out.println(listOfCharacters.get(i));
-//           // System.out.println(temp.substring(i,i+1));
-//            temp = temp.replaceFirst(temp.substring(i,i+1),"");
-//            newGeneratedWordList.add(temp);
-//            System.out.println(temp);
+
 
         }
 
@@ -102,7 +86,7 @@ public class SpellCorrector implements ISpellCorrector{
 
     }
 
-    private void TranspositionDistance(String inputWord)
+    private void TranspositionDistance(String inputWord,ArrayList editDistanceOneArray)
     {
         String temp = inputWord;
 
@@ -142,7 +126,7 @@ public class SpellCorrector implements ISpellCorrector{
 
 
 
-    private void AlterationDistance(String inputWord )
+    private void AlterationDistance(String inputWord,ArrayList editDistanceOneArray )
     {
         char[] alphabet = new char[26];
 
@@ -175,7 +159,7 @@ public class SpellCorrector implements ISpellCorrector{
 
     }
 
-    private void InsertionDistance(String inputWord)
+    private void InsertionDistance(String inputWord, ArrayList editDistanceOneArray)
     {
         char[] alphabet = new char[26];
 
@@ -218,7 +202,7 @@ public class SpellCorrector implements ISpellCorrector{
 
     }
 
-    private Boolean editDistanceCheck()
+    private Boolean editDistanceCheck(ArrayList editDistanceOneArray)
     {
         //this will ensure any edit distance 1 words are gone if we are running this for edit distance 2
         suggestedWords.clear();
@@ -246,25 +230,26 @@ public class SpellCorrector implements ISpellCorrector{
 
     }
 
-    private Boolean editDistanceTwoWords()
+    private Boolean editDistanceTwoWords(ArrayList editDistanceTwoArray,ArrayList editDistanceOneArray)
 
     {
         //clear edit distance array to be used again in the edit distance methods
+//
         editDistanceOneArray.clear();
         Boolean found = false;
         for(int i = 0; i < editDistanceTwoArray.size(); i ++)
         {
-            deletionDistance(editDistanceTwoArray.get(i));
+            deletionDistance(editDistanceTwoArray.get(i).toString(),editDistanceOneArray);
 
-            TranspositionDistance(editDistanceTwoArray.get(i));
+            TranspositionDistance(editDistanceTwoArray.get(i).toString(),editDistanceOneArray);
 
-            AlterationDistance(editDistanceTwoArray.get(i));
+            AlterationDistance(editDistanceTwoArray.get(i).toString(),editDistanceOneArray);
 
-            InsertionDistance(editDistanceTwoArray.get(i));
+            InsertionDistance(editDistanceTwoArray.get(i).toString(),editDistanceOneArray);
 
         }
 
-        found = editDistanceCheck();
+        found = editDistanceCheck(editDistanceOneArray);
 
         if(found)
         {
@@ -355,7 +340,9 @@ public class SpellCorrector implements ISpellCorrector{
     @Override
     public String suggestSimilarWord(String inputWord) {
         inputWord = inputWord.toLowerCase();
-        editDistanceOneArray.clear();
+//        editDistanceOneArray.clear();
+        ArrayList<String> editDistanceOneArray = new ArrayList<>();
+        ArrayList<String> editDistanceTwoArray = new ArrayList<>();
 
         if( dictionary.find(inputWord) != null)
         {
@@ -369,15 +356,15 @@ public class SpellCorrector implements ISpellCorrector{
 
             Boolean foundWordInDictionary = false;
 
-            deletionDistance(inputWord);
+            deletionDistance(inputWord,editDistanceOneArray);
 
-            TranspositionDistance(inputWord);
+            TranspositionDistance(inputWord,editDistanceOneArray);
 
-            AlterationDistance(inputWord);
+            AlterationDistance(inputWord,editDistanceOneArray);
 
-            InsertionDistance(inputWord);
+            InsertionDistance(inputWord,editDistanceOneArray);
 
-            foundWordInDictionary = editDistanceCheck();
+            foundWordInDictionary = editDistanceCheck(editDistanceOneArray);
 
 
             if(foundWordInDictionary == false)
@@ -386,7 +373,7 @@ public class SpellCorrector implements ISpellCorrector{
                 //make sure new array list of words are created
                 //run new words through edit distance check again.
                 editDistanceTwoArray = (ArrayList)editDistanceOneArray.clone();
-                foundWordInDictionary = editDistanceTwoWords();
+                foundWordInDictionary = editDistanceTwoWords(editDistanceTwoArray,editDistanceOneArray);
 
 
                 if(foundWordInDictionary)
