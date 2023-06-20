@@ -34,8 +34,9 @@ public class EvilHangmanGame implements IEvilHangmanGame {
         lettersGuessed.clear();
 
 
+
         Scanner input = new Scanner(dictionary);
-        Boolean DictionaryDoesNotContainWords = false;
+        Boolean DictionaryDoesContainWords = false;
 
         StringBuilder gw = new StringBuilder();
 
@@ -53,7 +54,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
             String currentWord = input.next();
             if(currentWord.length() == wordLength)
             {
-                DictionaryDoesNotContainWords = true;
+                DictionaryDoesContainWords = true;
                 dictionaryOfWordsOfFixedLength.add(currentWord);
                // System.out.println(currentWord);
 
@@ -61,7 +62,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
 
 
         }
-        if(!DictionaryDoesNotContainWords)
+        if(!DictionaryDoesContainWords)
         {
             throw new EmptyDictionaryException("Dictionary is empty");
         }

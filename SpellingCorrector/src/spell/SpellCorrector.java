@@ -12,15 +12,12 @@ import java.util.stream.IntStream;
 public class SpellCorrector implements ISpellCorrector{
     private Trie dictionary;
     HashMap<String, Integer> suggestedWords;
-//    ArrayList<String> editDistanceOneArray;
-//    ArrayList<String> editDistanceTwoArray;
+
 
     public SpellCorrector()
     {
         dictionary = new Trie();
         suggestedWords = new HashMap<String, Integer>();
-//        editDistanceOneArray = new ArrayList();
-//        editDistanceTwoArray = new ArrayList();
     }
 
     @Override
@@ -44,43 +41,43 @@ public class SpellCorrector implements ISpellCorrector{
 
     private void deletionDistance(String inputWord, ArrayList editDistanceOneArray)
     {
+        String tempWord = inputWord;
 
-        String temp = inputWord;
-        char[] array = temp.toCharArray();
-        ArrayList listOfCharacters = new ArrayList();
+        char[] charOfArrays = inputWord.toCharArray();
+        ArrayList<Character> currentCharOfWord = new ArrayList<Character>();
 
-        //System.out.println(temp);
-        for(int i = 0; i < inputWord.length(); i++)
+        for(int i = 0 ; i< charOfArrays.length;i++ )
         {
 
-            listOfCharacters.add(array[i]);
+            currentCharOfWord.add(charOfArrays[i]);
 
 
         }
 
-        ArrayList temporaryList = new ArrayList();
 
         StringBuilder sb = new StringBuilder();
 
-        for(int i = 0; i < listOfCharacters.size(); i++)
+        ArrayList<Character> tempArray = new ArrayList<>();
+
+        for(int i = 0 ; i < currentCharOfWord.size();i++)
         {
-            temporaryList = (ArrayList)listOfCharacters.clone();
-            temporaryList.remove(i);
-            for (Object letter: temporaryList)
+            tempArray = (ArrayList<Character>) currentCharOfWord.clone();
+
+            tempArray.remove(i);
+
+            for(Object Letter : tempArray)
             {
-                sb.append(letter);
+                sb.append(Letter);
+
             }
 
-
-           // System.out.println(sb.toString());
-
             editDistanceOneArray.add(sb.toString());
-            //to clear the current string builder
+
             sb.setLength(0);
 
-           //System.out.println(newGeneratedWordList.get(i));
 
         }
+
 
 
 
@@ -88,37 +85,29 @@ public class SpellCorrector implements ISpellCorrector{
 
     private void TranspositionDistance(String inputWord,ArrayList editDistanceOneArray)
     {
-        String temp = inputWord;
+        String tempWord = inputWord;
 
         char[] arrayOfChar = inputWord.toCharArray();
 
 
-        //System.out.println(temp);
-        for(int i = 0; i < arrayOfChar.length - 1; i++)
+        for(int i = 0 ; i < arrayOfChar.length-1;i++)
         {
-
             char swap;
-
-            temp = inputWord;
 
             arrayOfChar = inputWord.toCharArray();
 
             swap = arrayOfChar[i];
 
             arrayOfChar[i] = arrayOfChar[i + 1];
-            arrayOfChar[i + 1] = swap;
 
+            arrayOfChar[i+1] = swap;
 
-
-            temp = String.valueOf(arrayOfChar);
-
-            //System.out.println(temp);
-
-            editDistanceOneArray.add(temp);
-
+            editDistanceOneArray.add(String.valueOf(arrayOfChar));
 
 
         }
+
+
 
 
     }
@@ -130,30 +119,31 @@ public class SpellCorrector implements ISpellCorrector{
     {
         char[] alphabet = new char[26];
 
-        String tempWord = inputWord;
+        char[] charOfArrays = inputWord.toCharArray();
 
-            char[] arrayOfChar = inputWord.toCharArray();
-
-        char letter = 0;
-
-        for(int i = 0; i < arrayOfChar.length;i++)
+        for(int i = 0 ; i < charOfArrays.length;i++)
         {
-            char restrictedLetter = arrayOfChar[i];
-            arrayOfChar = inputWord.toCharArray();
-            tempWord = inputWord;
-            for (int j = 0; j < alphabet.length;j++)
+            char restrictedLetter = charOfArrays[i];
+
+            charOfArrays = inputWord.toCharArray();
+
+            for(int j = 0 ; j < alphabet.length;j++)
             {
-                letter =  (char) ('a' + j);
+                char letter = (char)('a' + j);
+
                 if(letter != restrictedLetter)
                 {
-                    arrayOfChar[i] = (char) ('a' + j);
-                    tempWord = String.valueOf(arrayOfChar);
-                   // System.out.println(tempWord);
-                    editDistanceOneArray.add(tempWord);
+                    charOfArrays[i] = letter;
+                    //String tempWord = String.valueOf(charOfArrays);
+                    editDistanceOneArray.add(String.valueOf(charOfArrays));
+
+
                 }
 
 
             }
+
+
         }
 
 
@@ -163,40 +153,31 @@ public class SpellCorrector implements ISpellCorrector{
     {
         char[] alphabet = new char[26];
 
-        String tempWord = inputWord;
+        char[] arrayOfChar = inputWord.toCharArray();
 
-       // char[] arrayOfChar = inputWord.toCharArray();
+        StringBuffer sb = new StringBuffer();
 
-        char letter = 0;
-
-        StringBuffer str = new StringBuffer();
-        // + 1 to account for the last index position to insert the letter onto the word
-        for(int i = 0; i < inputWord.length() + 1 ;i++)
+        for(int i = 0 ; i < arrayOfChar.length + 1;i++)
         {
 
-           // arrayOfChar = inputWord.toCharArray();
-            //tempWord = inputWord;
-            for (int j = 0; j < alphabet.length;j++)
+
+            for(int j = 0 ; j < alphabet.length;j++)
             {
-                letter =  (char) ('a' + j);
+                char letter = (char)('a'+j);
 
-                str.append(inputWord);
+                sb.append(inputWord);
 
-                str.insert(i,letter);
-
-//                    arrayOfChar[i] = (char) ('a' + j);
-                    //tempWord = String.valueOf(arrayOfChar);
-
-                tempWord = str.toString();
-
-
-                  //  System.out.println(tempWord);
+                sb.insert(i,letter);
+                String tempWord = sb.toString();
                 editDistanceOneArray.add(tempWord);
+                sb.setLength(0);
 
-                    str.delete(0,str.length());
 
             }
+
+
         }
+
 
 
 
@@ -212,8 +193,7 @@ public class SpellCorrector implements ISpellCorrector{
        int count = 0;
         while(iter.hasNext())
         {
-           // count++;
-           // System.out.println(count);
+
             String san = (String)iter.next();
             wordFoundInDictionary = dictionary.find(san);
             if(wordFoundInDictionary  != null )
@@ -268,20 +248,15 @@ public class SpellCorrector implements ISpellCorrector{
         String suggestedword = "";
         ArrayList highestFrequencyContainer = new ArrayList();
 
-        int duplicateCount = 0;
+
         int highestFrequency = 0;
         for (Map.Entry<String,Integer> entry : suggestedWords.entrySet())
         {
             int frequency = entry.getValue();
 
-            if(frequency >= highestFrequency)
+            if(frequency > highestFrequency)
             {
-                if(frequency == highestFrequency)
-                {
-                    duplicateCount++;
-                }
                 highestFrequency = frequency;
-
             }
 //                    System.out.println("Key = " + entry.getKey() +
 //                            ", Value = " + entry.getValue());
@@ -298,7 +273,7 @@ public class SpellCorrector implements ISpellCorrector{
 
         }
         //if there is more than one word with the same frequency
-        if(duplicateCount > 0)
+        if(highestFrequencyContainer.size() > 1)
         {
 
             String tempWord;

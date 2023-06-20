@@ -83,7 +83,7 @@ public class PersonDAO extends DAO{
      */
     public Person getPersonObject(String personID)throws DataAccessError{
 
-       // List<Book> books = new ArrayList<>();
+
 
         String sql = "SELECT personID, AssociatedUsername, firstName, lastName, gender, fatherID, motherID, spouseID FROM Person " +
                 "WHERE personID = ?";

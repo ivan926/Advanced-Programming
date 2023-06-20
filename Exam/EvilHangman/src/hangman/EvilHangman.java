@@ -21,7 +21,7 @@ public class EvilHangman {
             gameInterface.startGame(dictionary,wordLength);
 
         }
-        catch(IOException | EmptyDictionaryException excpetion)
+        catch(IOException | EmptyDictionaryException exception)
         {
 
         }

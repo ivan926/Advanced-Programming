@@ -230,7 +230,6 @@ public class Trie implements ITrie{
                 {
                     isEqual = false;
 
-                    return isEqual;
                 }
 
                 if(isEqual == false)
@@ -299,6 +298,8 @@ public class Trie implements ITrie{
 
                 return isEqual;
             }
+
+
 
 
 
